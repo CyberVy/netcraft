@@ -44,4 +44,4 @@ chmod +x ./$ui_dir/ray-ui
 echo "Hello, it works fine and the tips for running are below."
 echo "Caution: please execute [cd ./ray_ui_assets] before running ray-ui"
 echo "CMD: ./ray-ui"
-echo "Params: run, setting[-username,-password,-webBasePath]"
+echo "Params: run, setting[-username,-password,-port,-webBasePath]"
