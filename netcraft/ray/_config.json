@@ -1,0 +1,58 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 8160,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "1a63a7e9-d276-55c7-b51f-6d6b134d8e5d"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none"
+      }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 8260,
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "none",
+        "password": "HelloWorld."
+      },
+      "streamSettings": {
+        "network": "websocket"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}
