@@ -1,0 +1,86 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "port": 8160,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "1a63a7e9-d276-55c7-b51f-6d6b134d8e5d"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none"
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8260,
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "none",
+        "password": "HelloWorld."
+      },
+      "streamSettings": {
+        "network": "websocket"
+      }
+    },
+    {
+      "listen": "0.0.0.0",
+      "port": 8360,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "1a63a7e9-d276-55c7-b51f-6d6b134d8e5d"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "none",
+        "xhttpSettings": {
+          "headers": {},
+          "host": "",
+          "mode": "auto",
+          "noSSEHeader": false,
+          "path": "/",
+          "scMaxBufferedPosts": 30,
+          "scMaxEachPostBytes": "1000000",
+          "scStreamUpServerSecs": "20-80",
+          "xPaddingBytes": "100-1000"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}
