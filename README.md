@@ -2,7 +2,7 @@
 
 A tunnel softwares installer for Linux system, which allows you to install them with no root privilege.
 
-Every software is installed in cruent work directory by default. Use process manager to make them keep running.
+Every software is installed in current work directory by default. Use process manager to make them keep running.
 
 ---
 ### Cloudflared
