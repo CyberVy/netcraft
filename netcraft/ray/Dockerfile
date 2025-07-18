@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM ubuntu
 
 RUN apt-get update && apt-get install -y curl bash unzip && \
     curl -fsSL "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_install.sh" | bash && \
