@@ -7,21 +7,30 @@ Every software is installed in cruent work directory by default. Use process man
 ---
 ### Cloudflared
 ```shell
-curl -fsSL https://... | bash
-./cloudflared tunnel run --protocol http2 --token <your token>
+curl -fsSL https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/cloudflared/cfd_install.sh | bash
+./cloudflared tunnel run --protocol http2 --token <your-token>
 ```
 
 ---
 ### Nginx
 ```shell
 # Before installation, please install build-essential libpcre3 libpcre3-dev libssl-dev zlib1g-dev
-curl -fsSL https://... | bash
+curl -fsSL https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/nginx/nginx_install.sh | bash
 ./nginx/sbin/nginx
 ```
 ---
 
 ### X-Ray
+Core
 ```shell
-curl -fsSL https://... | bash
-./ray run -c <your config file path>
+# Before installation, please install unzip
+curl -fsSL  https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_install.sh | bash
+./ray run -c <your-config-file-path>
 ```
+UI
+```shell
+curl -fsSL  https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_ui_install.sh | bash
+./ray_ui setting -username <your-username> -password <your-password> -webBasePath <your-URL-path>
+./ray_ui run
+```
+
