@@ -40,8 +40,6 @@ rm ./$ui_dir/x-ui.sh
 rm ./$ui_dir/bin/README.md
 
 chmod +x ./$ui_dir/ray-ui
-export XUI_DB_FOLDER=./
-export XUI_LOG_FOLDER=./
 
 echo "Hello, it works fine and the tips for running are below."
 echo "Caution: please execute [cd ./ray_ui_assets] before running ray-ui"
