@@ -42,6 +42,7 @@ rm ./$ui_dir/bin/README.md
 chmod +x ./$ui_dir/ray-ui
 
 echo "Hello, it works fine and the tips for running are below."
-echo "Caution: please execute [cd ./ray_ui_assets] before running ray-ui"
+echo "Caution: please execute [cd ./ray_ui_assets] before running ray-ui,"
+echo "if you have no write permission in /etc or /var, please execute [export XUI_DB_FOLDER=./ && export XUI_LOG_FOLDER=./]"
 echo "CMD: ./ray_ui_assets/ray-ui"
 echo "Params: run, setting[-username,-password,-port,-webBasePath]"
