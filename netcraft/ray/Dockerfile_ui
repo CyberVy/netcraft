@@ -1,7 +1,6 @@
 FROM ubuntu
 
 RUN curl -fsSL "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_ui_install.sh" | bash && \
-  touch ./ray_ui_assets/bin/config.json && \
   ./ray_ui_assets/ray-ui setting -username admin -password admin -port 7860 -webBasePath /
 
 CMD cd ./ray_ui_assets && ./ray-ui run
