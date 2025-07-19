@@ -11,6 +11,14 @@
           "geoip:private"
         ],
         "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain":[
+          "full:googlevideo.com",
+          "regexp:\\.googlevideo\\.com$"
+        ],
+        "outboundTag": "warp"
       }
     ]
   },
