@@ -31,7 +31,7 @@ UI
 ```shell
 curl -fsSL "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_ui_install.sh" | bash
 cd ./ray_ui_assets
-./ray_ui setting -username <your-username> -password <your-password> -port <your-port> -webBasePath <your-URL-path>
-./ray_ui run
+./ray-ui setting -username <your-username> -password <your-password> -port <your-port> -webBasePath <your-URL-path>
+./ray-ui run
 ```
 
