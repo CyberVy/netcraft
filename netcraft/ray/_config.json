@@ -47,6 +47,10 @@
   ],
   "outbounds": [
     {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
       "protocol": "wireguard",
       "settings": {
         "secretKey": "eNmGx6PYCwffWpERF9CVqytFu79/VLCbZqUGbAIro30=",
@@ -67,10 +71,6 @@
         "mtu": 1280
       },
       "tag": "warp"
-    },
-    {
-      "protocol": "freedom",
-      "tag": "direct"
     },
     {
       "protocol": "blackhole",
