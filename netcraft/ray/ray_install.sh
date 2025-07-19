@@ -47,5 +47,5 @@ chmod +x ./$ray_dir/ray
 
 echo "Hello, it works fine and the tips for running are below."
 echo "Caution: no caution"
-echo "CMD: ./ray"
+echo "CMD: ./ray_assets/ray"
 echo "Params: run[-c[config path]]"
