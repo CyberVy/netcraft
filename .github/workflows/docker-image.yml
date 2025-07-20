@@ -19,7 +19,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.GH_TOKEN }}
         
     - name: Build the ray image
       run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/cybervy/ray:latest netcraft/ray
