@@ -26,3 +26,9 @@ jobs:
     
     - name: Push the ray image
       run: docker push ghcr.io/cybervy/ray:latest
+
+    - name: Build the ray-ui image
+      run: docker build -f netcraft/ray/Dockerfile_UI -t ghcr.io/cybervy/ray-ui:latest netcraft/ray
+    
+    - name: Push the ray-ui image
+      run: docker push ghcr.io/cybervy/ray-ui:latest
