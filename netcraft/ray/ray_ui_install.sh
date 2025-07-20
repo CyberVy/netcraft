@@ -1,3 +1,5 @@
+set -e
+
 sys_info=$(uname -s)
 echo "$sys_info"
 
