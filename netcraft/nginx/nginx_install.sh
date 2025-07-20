@@ -1,3 +1,5 @@
+set -e
+
 version="1.29.0"
 
 echo "If your run this script on a docker, before installation,"
