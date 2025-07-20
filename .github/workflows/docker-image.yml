@@ -9,7 +9,6 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +18,4 @@ jobs:
       run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/cybervy/ray:latest netcraft/ray
     
     - name: Push the ray image
-      run: docker push ghcr.io/${{ github.repository_owner }}/ray:latest
+      run: docker push ghcr.io/cybervy/ray:latest
