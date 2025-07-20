@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Build the ray image
-      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/${{ github.repository_owner }}/ray:latest netcraft/ray
+      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/cybervy/ray:latest netcraft/ray
     
     - name: Push the ray image
       run: docker push ghcr.io/${{ github.repository_owner }}/ray:latest
