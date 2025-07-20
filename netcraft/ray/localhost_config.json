@@ -51,6 +51,34 @@
       "streamSettings": {
         "network": "websocket"
       }
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 8360,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "1a63a7e9-d276-55c7-b51f-6d6b134d8e5d"
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "none",
+        "xhttpSettings": {
+          "headers": {},
+          "host": "",
+          "mode": "auto",
+          "noSSEHeader": false,
+          "path": "/",
+          "scMaxBufferedPosts": 30,
+          "scMaxEachPostBytes": "1000000",
+          "scStreamUpServerSecs": "20-80",
+          "xPaddingBytes": "100-1000"
+        }
+      }
     }
   ],
   "outbounds": [
