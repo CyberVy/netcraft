@@ -1,11 +1,11 @@
-name: Docker Image CI
+name: Ray Image CI
 
 on:
   push:
     branches: [ "main" ]
     paths: 
      - 'netcraft/ray/**'
-     - '.github/workflows/docker.yml'
+     - '.github/workflows/ray_docker.yml'
   pull_request:
     branches: [ "main" ]
     paths:
