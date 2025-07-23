@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     paths: 
      - 'netcraft/ssh/**'
-     # - '.github/workflows/ssh_docker.yml'
+     - '.github/workflows/ssh_docker.yml'
   pull_request:
     branches: [ "main" ]
     paths:
