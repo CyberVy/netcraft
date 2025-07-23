@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     paths: 
      - 'netcraft/ssh/**'
-     - '.github/workflows/ssh_docker.yml'
+     # - '.github/workflows/ssh_docker.yml'
   pull_request:
     branches: [ "main" ]
     paths:
@@ -26,8 +26,8 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GH_TOKEN }}
         
-    - name: Build the ssh image
-      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/ssh:latest netcraft/ssh
+    - name: Build the SSH image
+      run: docker build -f netcraft/ssh/Dockerfile -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/ssh:latest netcraft/ssh
     
-    - name: Push the ssh image
+    - name: Push the SSH image
       run: docker push ghcr.io/cybervy/ssh:latest
