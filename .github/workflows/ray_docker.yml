@@ -14,6 +14,7 @@ on:
 jobs:
 
   build:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
@@ -27,13 +28,13 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build the ray image
-      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft netcraft/ray
+      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray netcraft/ray
     
     - name: Push the ray image
-      run: docker push ghcr.io/cybervy/netcraft
+      run: docker push ghcr.io/cybervy/netcraft:ray
 
-    # - name: Build the ray-ui image
-    #   run: docker build -f netcraft/ray/Dockerfile_UI -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray-ui netcraft/ray
+    - name: Build the ray-ui image
+      run: docker build -f netcraft/ray/Dockerfile_UI -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray-ui netcraft/ray
     
-    # - name: Push the ray-ui image
-    #   run: docker push ghcr.io/cybervy/netcraft:ray-ui
+    - name: Push the ray-ui image
+      run: docker push ghcr.io/cybervy/netcraft:ray-ui
