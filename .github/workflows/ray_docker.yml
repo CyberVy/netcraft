@@ -24,7 +24,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
-        password: ${{ secrets.GH_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build the ray image
       run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/ray:latest netcraft/ray
