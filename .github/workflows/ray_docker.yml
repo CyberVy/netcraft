@@ -30,10 +30,10 @@ jobs:
       run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray netcraft/ray
     
     - name: Push the ray image
-      run: docker push ghcr.io/cybervy/netcraft:ray
+      run: docker push ghcr.io/cybervy/netcraft
 
-    - name: Build the ray-ui image
-      run: docker build -f netcraft/ray/Dockerfile_UI -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray-ui netcraft/ray
+    # - name: Build the ray-ui image
+    #   run: docker build -f netcraft/ray/Dockerfile_UI -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray-ui netcraft/ray
     
-    - name: Push the ray-ui image
-      run: docker push ghcr.io/cybervy/netcraft:ray-ui
+    # - name: Push the ray-ui image
+    #   run: docker push ghcr.io/cybervy/netcraft:ray-ui
