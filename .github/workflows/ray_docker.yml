@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build the ray image
-      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:ray netcraft/ray
+      run: docker build -f netcraft/ray/Dockerfile_CORE -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft netcraft/ray
     
     - name: Push the ray image
       run: docker push ghcr.io/cybervy/netcraft
