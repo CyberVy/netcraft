@@ -6,35 +6,36 @@ echo "$sys_info"
 arch_info=$(uname -m)
 echo "$arch_info"
 
+version="v25.6.8"
 ray_dir="ray_assets"
 
 if [[ "$sys_info" = "Darwin" &&  ("$arch_info" = "x86_64"  ||  "$arch_info" = "amd64") ]]; then
-  curl -Lo ./_macos-64.zip "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-macos-64.zip"
+  curl -Lo ./_macos-64.zip "https://github.com/XTLS/Xray-core/releases/download/$version/Xray-macos-64.zip"
   unzip _macos-64.zip -d ./$ray_dir
   rm ./_macos-64.zip
 
 elif [[ "$sys_info" = "Darwin" &&  ("$arch_info" = "arm64" || "$arch_info" = "aarch64") ]]; then
-  curl -Lo ./_macos-64.zip "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-macos-arm64-v8a.zip"
+  curl -Lo ./_macos-64.zip "https://github.com/XTLS/Xray-core/releases/download/$version/Xray-macos-arm64-v8a.zip"
   unzip _macos-64.zip -d ./$ray_dir
   rm ./_macos-64.zip
 
 elif [[ "$sys_info" = "FreeBSD" &&  ("$arch_info" = "x86_64"  ||  "$arch_info" = "amd64") ]]; then
-  curl -Lo ./_freebsd-64.zip "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-freebsd-64.zip"
+  curl -Lo ./_freebsd-64.zip "https://github.com/XTLS/Xray-core/releases/download/$version/Xray-freebsd-64.zip"
   unzip _freebsd-64.zip -d ./$ray_dir
   rm ./_freebsd-64.zip
 
 elif [[ "$sys_info" = "FreeBSD" &&  ("$arch_info" = "arm64" || "$arch_info" = "aarch64") ]]; then
-  curl -Lo ./_freebsd-64.zip "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-freebsd-arm64-v8a.zip"
+  curl -Lo ./_freebsd-64.zip "https://github.com/XTLS/Xray-core/releases/download/$version/Xray-freebsd-arm64-v8a.zip"
   unzip _freebsd-64.zip -d ./$ray_dir
   rm ./_freebsd-64.zip
 
 elif [[ "$sys_info" = "Linux" &&  ("$arch_info" = "x86_64"  ||  "$arch_info" = "amd64") ]]; then
-  curl -Lo ./_linux-64.zip "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-linux-64.zip"
+  curl -Lo ./_linux-64.zip "https://github.com/XTLS/Xray-core/releases/download/$version/Xray-linux-64.zip"
   unzip _linux-64.zip -d ./$ray_dir
   rm ./_linux-64.zip
 
 elif [[ "$sys_info" = "Linux" &&  ("$arch_info" = "arm64" || "$arch_info" = "aarch64") ]]; then
-  curl -Lo ./_linux-64.zip "https://github.com/XTLS/Xray-core/releases/download/v25.6.8/Xray-linux-arm64-v8a.zip"
+  curl -Lo ./_linux-64.zip "https://github.com/XTLS/Xray-core/releases/download/$version/Xray-linux-arm64-v8a.zip"
   unzip _linux-64.zip -d ./$ray_dir
   rm ./_linux-64.zip
 
