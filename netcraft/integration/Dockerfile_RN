@@ -3,8 +3,8 @@ FROM ubuntu
 RUN apt-get update && apt-get install -y curl unzip build-essential libpcre3 libpcre3-dev libssl-dev zlib1g-dev
 
 RUN curl -fsSL "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/nginx/nginx_install.sh" | bash && \
-    curl -fsSL "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_install.sh" | bash && \
-    curl -Lo ./nginx/conf/nginx.conf "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/nginx/nginx.conf" && \
-    curl -Lo ./ray_assets/config.json "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/localhost_config.json"
+    curl -fsSL "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/ray_install.sh" | bash
 
-CMD ./nginx/sbin/nginx & ./ray_assets/ray run -c ./ray_assets/config.json
+CMD curl -Lo ./nginx/conf/nginx.conf "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/nginx/nginx.conf" && \
+    curl -Lo ./ray_assets/config.json "https://github.com/CyberVy/netcraft/raw/refs/heads/main/netcraft/ray/localhost_config.json" && \
+    ./nginx/sbin/nginx & ./ray_assets/ray run -c ./ray_assets/config.json
