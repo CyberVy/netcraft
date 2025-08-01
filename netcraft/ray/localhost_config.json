@@ -15,8 +15,8 @@
       {
         "type": "field",
         "domain":[
-          "full:googlevideo.com",
-          "regexp:\\.googlevideo\\.com$"
+          "full:googlevideowarp.com",
+          "regexp:\\.googlevideowarp\\.com$"
         ],
         "outboundTag": "warp"
       }
