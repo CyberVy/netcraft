@@ -1,0 +1,35 @@
+name: Integration Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: 
+     - 'netcraft/integration/**'
+     - '.github/workflows/integration_docker.yml'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'netcraft/integration/**'
+
+jobs:
+
+  build:
+    permissions: 
+      packages: write
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Build the ray_nginx image
+      run: docker build -f netcraft/integration/Dockerfile_RN -t ghcr.io/$(echo "${{ github.repository_owner }}" | tr A-Z a-z)/netcraft:rn netcraft/integration
+    
+    - name: Push the ray_nginx image
+      run: docker push ghcr.io/cybervy/netcraft:rn
