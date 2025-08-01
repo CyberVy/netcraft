@@ -4,12 +4,17 @@ on:
   push:
     branches: [ "main" ]
     paths: 
+     - 'netcraft/nginx/**'
+     - 'netcraft/ray/**'
      - 'netcraft/integration/**'
      - '.github/workflows/integration_docker.yml'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'netcraft/integration/**'
+     - 'netcraft/nginx/**'
+     - 'netcraft/ray/**'
+     - 'netcraft/integration/**'
+     - '.github/workflows/integration_docker.yml'
 
 jobs:
 
