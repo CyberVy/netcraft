@@ -7,6 +7,8 @@ on:
      - 'netcraft/ray/**'
      - '.github/workflows/ray_docker.yml'
 
+  workflow_dispatch:
+  
 jobs:
 
   build:
