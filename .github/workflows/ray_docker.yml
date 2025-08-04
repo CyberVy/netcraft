@@ -6,10 +6,6 @@ on:
     paths: 
      - 'netcraft/ray/**'
      - '.github/workflows/ray_docker.yml'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'netcraft/ray/**'
 
 jobs:
 
