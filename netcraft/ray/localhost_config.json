@@ -15,8 +15,8 @@
       {
         "type": "field",
         "domain":[
-          "full:gstatic.com",
-          "regexp:\\.gstatic\\.com$"
+          "full:gstaticwarp.com",
+          "regexp:\\.gstaticwarp\\.com$"
         ],
         "outboundTag": "warp"
       }
