@@ -9,6 +9,8 @@ on:
      - 'netcraft/integration/**'
      - '.github/workflows/integration_docker.yml'
 
+  workflow_dispatch:
+
 jobs:
 
   build:
