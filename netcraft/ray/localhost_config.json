@@ -15,8 +15,6 @@
       {
         "type": "field",
         "domain":[
-          "full:youtube.com",
-          "regexp:\\.youtube\\.com$",
           "full:googlevideo.com",
           "regexp:\\.googlevideo\\.com$"
         ],
